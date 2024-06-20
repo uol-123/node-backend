@@ -7,7 +7,7 @@ const Product = model.Product;
 const users = JSON.parse(fileData)
 exports.getAllProducts = async (req,res) => {
   const products =await Product.find(); //price greater then 500 query
-  res.send(JSON.stringify(products));
+  res.send(products);
 }
 
 exports.getProduct = async (req,res) => {
