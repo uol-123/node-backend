@@ -39,7 +39,7 @@ server.use(express.json());
 
 //   res.sendFile(path.resolve(__dirname,"public",".next","server","app","index.html"))
 // })
-appRouter.get("/",(req,res)=>{
+server.get("/",(req,res)=>{
     console.log("Form")
     res.send('hello node app')
 })
