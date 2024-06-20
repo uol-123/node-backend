@@ -39,10 +39,10 @@ server.use(express.json());
 
 //   res.sendFile(path.resolve(__dirname,"public",".next","server","app","index.html"))
 // })
-// appRouter.get("/getForm",(req,res)=>{
-//     console.log("Form")
-//     res.sendFile('C:/Users/kinza/OneDrive/Desktop/nodejs-app/index.html')
-// })
+appRouter.get("/",(req,res)=>{
+    console.log("Form")
+    res.send('hello node app')
+})
 // appRouter.post('/submit-student-data', function (req, res) {
 //     var name = req.body.firstName + ' ' + req.body.lastName;
     
