@@ -22,7 +22,7 @@ server.use(bodyParser.urlencoded({ extended: false }));
 let port = process.env.PORT || 2000 ;
 server.use(express.json());
 server.get("/",(req,res)=>{
-    res.send('hello node app');
+    res.sendFile('D:/nodejs-backend/node-backend/index.html');
 })
 server.post("/createUser",createUser)
 
