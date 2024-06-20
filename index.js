@@ -17,7 +17,6 @@ var bodyParser = require("body-parser");
 const { createProduct, getAllProducts, getProduct, updateProduct, deleteProduct } = require("./Controller/product.js");
 const { createTask, getAllTasks, getTask, updateTask, deleteTask } = require("./Controller/task.js");
 const { createUser } = require("./Controller/user.js");
-server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
 let port = process.env.PORT || 2000 ;
 server.use(express.json());
