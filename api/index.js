@@ -4,6 +4,10 @@ require('dotenv').config();
 const cors = require('cors');
 const server = express();
 const mongoose = require('mongoose');
+var bodyParser = require("body-parser");
+const { createProduct, getAllProducts, getProduct, updateProduct, deleteProduct } = require("../Controller/product.js");
+const { createTask, getAllTasks, getTask, updateTask, deleteTask } = require("../Controller/task.js");
+const { createUser } = require("../Controller/user.js");
 
 main().catch(err => console.log(err));
 
@@ -12,14 +16,8 @@ async function main() {
   console.log("database connected");
 
 }
-
-var bodyParser = require("body-parser");
-const { createProduct, getAllProducts, getProduct, updateProduct, deleteProduct } = require("../Controller/product.js");
-const { createTask, getAllTasks, getTask, updateTask, deleteTask } = require("../Controller/task.js");
-const { createUser } = require("../Controller/user.js");
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
-let port = process.env.PORT || 2000 ;
 server.use(express.json());
 server.get("/",(req,res)=>{
     res.sendFile('D:/nodejs-backend/node-backend/index.html');
