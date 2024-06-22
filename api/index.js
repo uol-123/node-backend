@@ -17,6 +17,7 @@ var bodyParser = require("body-parser");
 const { createProduct, getAllProducts, getProduct, updateProduct, deleteProduct } = require("../Controller/product.js");
 const { createTask, getAllTasks, getTask, updateTask, deleteTask } = require("../Controller/task.js");
 const { createUser } = require("../Controller/user.js");
+server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
 let port = process.env.PORT || 2000 ;
 server.use(express.json());
@@ -37,8 +38,10 @@ server.get("/task/:id",getTask)
 server.put("/updateTask/:id",updateTask)
 server.delete("/deleteTask/:id",deleteTask)
 
-server.listen(8080,()=>{
-    console.log(`server started at http://localhost:${port}`)
+server.listen(3001,()=>{
+    console.log(`server startedgi at http://localhost:3000`)
 })
+
+module.exports = server;
 
 

@@ -1,7 +1,5 @@
-const fs = require("fs");
-const fileData = fs.readFileSync("./model/user.json", "utf8");
+
 const model = require("../model/task");
-const { json } = require("body-parser");
 const Task = model.Task;
 
 exports.createTask = async (req,res) =>{

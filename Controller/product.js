@@ -1,10 +1,7 @@
 
-const fs = require("fs");
-const fileData = fs.readFileSync("./model/user.json", "utf8");
 const model = require("../model/product");
-const { json } = require("body-parser");
+
 const Product = model.Product;
-const users = JSON.parse(fileData)
 exports.getAllProducts = async (req,res) => {
   const products =await Product.find(); //price greater then 500 query
   res.send(products);
